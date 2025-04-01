@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prod-pv
+  namespace: prod  # Specify the namespace
+spec:
+  capacity:
+    storage: 2Gi  # Size of the volume
+  accessModes:
+    - ReadWriteOnce  # The access mode for this volume
+  persistentVolumeReclaimPolicy: Retain  # What happens when the PVC is deleted
+  storageClassName: standard  # Storage class to match with PVC (optional)
+  hostPath:  # This is for local storage (it can vary based on the storage provider)
+    path: "/tmp/nginx-prod/"  # Path on the host machine (for local storage)

@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-index-html
+  namespace: dev  # Specify your namespace here
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Environment</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;s
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 50px;
+        }
+        h1 {
+        color: #4CAF50;
+        }
+        p {
+        color: #555;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to the Development Environment!</h1>
+    <p>This page is served from the Nginx web server running in Kubernetes.</p>
+    <p><strong>Environment: Dev</strong></p>
+    </body>
+    </html>
+
